@@ -1,0 +1,2 @@
+# qrty
+QR generator app
