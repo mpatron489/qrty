@@ -12,11 +12,21 @@ import lombok.Setter;
 public class QRObject
 {
     private ImageType imageType;
+    private String    url;
     private BitMatrix matrix;
 
     public QRObject(String imageType){
-        if(imageType.toUpperCase().equals("SVG")){
+        if(imageType.equalsIgnoreCase("SVG")){
             this.imageType = ImageType.SVG;
+        }
+
+        else if(imageType.equalsIgnoreCase("PNG"))
+        {
+            this.imageType = ImageType.PNG;
+        }
+
+        else if(imageType.equalsIgnoreCase("JPEG")){
+            this.imageType = ImageType.JPEG;
         }
     }
 }
